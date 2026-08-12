@@ -1,0 +1,8 @@
+# Add one product per block below. Copy the format exactly (indentation matters).
+# image: path to a photo you've added under /assets/images/products/
+# link: your affiliate link
+
+- name: "Example Product Name"
+  description: "One or two honest sentences about what it is and why you recommend it."
+  image: "/assets/images/products/example.jpg"
+  link: "https://example.com/affiliate-link"
