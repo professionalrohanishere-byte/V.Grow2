@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="wrap">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      {% include ring-mark.html class="ring" %}
+      <span class="word">V.Grow</span>
+    </a>
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About Us</a>
+      <a href="{{ '/products/' | relative_url }}" {% if page.url == '/products/' %}class="active"{% endif %}>Products</a>
+    </nav>
+  </div>
+</header>
