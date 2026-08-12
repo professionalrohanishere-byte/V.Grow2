@@ -1,0 +1,35 @@
+---
+layout: default
+title: Products
+permalink: /products/
+---
+<section class="wrap" style="padding-top:56px;">
+  <span class="eyebrow">Recommended</span>
+  <h1 style="font-size: clamp(1.9rem, 4vw, 2.6rem); max-width: 20ch; margin-bottom: 14px;">Things I actually use and recommend</h1>
+  <p style="max-width: 60ch; color:#4A524C; margin-bottom: 40px;">Every item below is something I've personally tried. Some links are affiliate links — if you buy through them, I may earn a small commission at no extra cost to you.</p>
+
+  {% if site.data.products and site.data.products.size > 0 %}
+  <div class="product-grid">
+    {% for product in site.data.products %}
+    <div class="product-card">
+      <div class="thumb">
+        {% if product.image %}
+        <img src="{{ product.image | relative_url }}" alt="{{ product.name }}">
+        {% endif %}
+      </div>
+      <div class="product-body">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <a href="{{ product.link }}" class="btn btn-primary" target="_blank" rel="nofollow sponsored noopener">View / Buy</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-note">No products added yet — see the note below for how to add the first one.</div>
+  {% endif %}
+
+  <div class="affiliate-note">
+    <strong>How this page works:</strong> only the site owner can add products — there's no upload form for visitors, since this is a static site. To add a new product, edit <code>_data/products.yml</code> in the GitHub repository (add a name, description, image path, and affiliate link), then commit the change. It appears here automatically within about a minute.
+  </div>
+</section>

@@ -1,0 +1,19 @@
+title: V.Grow
+description: "Real notes on growing a better life — one honest step at a time."
+author: V.Grow
+baseurl: ""
+url: ""
+
+markdown: kramdown
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

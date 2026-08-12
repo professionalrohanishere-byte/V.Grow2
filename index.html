@@ -1,0 +1,35 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="wrap">
+    {% include ring-mark.html class="hero-rings" %}
+    <span class="eyebrow">A blog about growing, honestly</span>
+    <h1>Small, real steps toward a better-built life.</h1>
+    <p class="lede">V.Grow is a working journal of what actually helps — no hype, no miracle routines. Just tested ideas, written plainly, as I try them myself.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head">
+    <h2>Latest articles</h2>
+    <span class="count">{{ site.posts | size }} published</span>
+  </div>
+
+  {% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts %}
+    <div class="post-row">
+      <div class="post-date">{{ post.date | date: "%b %-d" }}</div>
+      <div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-note">No articles published yet. Add a new file to <code>_posts/</code> and it will appear here automatically.</div>
+  {% endif %}
+</section>
